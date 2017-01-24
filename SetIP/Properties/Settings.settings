@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SetIP.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EthIPac" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.192.60</Value>
+    </Setting>
+    <Setting Name="WifiIPac" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.192.63</Value>
+    </Setting>
+    <Setting Name="EthDnsac" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.192.1</Value>
+    </Setting>
+    <Setting Name="WifiDnsac" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.192.1</Value>
+    </Setting>
+    <Setting Name="Subnet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">255.255.255.0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
