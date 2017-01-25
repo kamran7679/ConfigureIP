@@ -29,6 +29,7 @@ namespace SetIP
             try
             {
                 InitializeComponent();
+                this.Loaded += new RoutedEventHandler(Window_Loaded);   //To show window in lower right corner
 
 
                 EthernetInf(out EthIP, out EthDns, out EthName);
@@ -37,7 +38,7 @@ namespace SetIP
 
                                 
 
-                if (EthIP == Properties.Settings.Default.EthIPac)  // Set ur IP
+                if (EthIP == Properties.Settings.Default.EthIPac)  
                 {
                     EthStatic.Background = Brushes.Cyan;
 
@@ -51,7 +52,7 @@ namespace SetIP
                 }
                 //................................
 
-                if (WifiIP == Properties.Settings.Default.WifiIPac)  // Set ur IP
+                if (WifiIP == Properties.Settings.Default.WifiIPac)  
                 {
                     WIFIStatic.Background = Brushes.Cyan;
 
@@ -71,8 +72,17 @@ namespace SetIP
 
 
 
+        private void Window_Loaded(object sender, RoutedEventArgs e) //To show window in lower right corner
+        {
+            var desktopWorkingArea = System.Windows.SystemParameters.WorkArea;
+            this.Left = desktopWorkingArea.Right - this.Width;
+            this.Top = desktopWorkingArea.Bottom - this.Height;
+        }
 
-        private void SetIP(Button sender, string arg)
+
+
+
+        private void SetIP(Button sender, string arg)  //To set IP with elevated cmd prompt
         {
             try
             {
@@ -119,7 +129,7 @@ namespace SetIP
 
 
 
-        private static void EthernetInf(out string ip, out string dns, out string nic)
+        private static void EthernetInf(out string ip, out string dns, out string nic)  // To get current ethernet config
         {
             ip = "";
             dns = "";
@@ -155,7 +165,7 @@ namespace SetIP
 
 
 
-        private static void WifiInf(out string ip, out string dns, out string nic)
+        private static void WifiInf(out string ip, out string dns, out string nic)  // To get current wifi config
         {
             ip = "";
             dns = "";
@@ -192,7 +202,7 @@ namespace SetIP
         private void EthStatic_Click(object sender, RoutedEventArgs e)
         {
             
-            SetIP(EthStatic, "/c netsh interface ip set address " + EthName + " static " + Properties.Settings.Default.EthIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.EthDnsac + " & netsh interface ip add dns " + EthName + " " + Properties.Settings.Default.EthDnsac);
+            SetIP(EthStatic, "/c netsh interface ip set address " + EthName + " static " + Properties.Settings.Default.EthIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.EthDnsac + " & netsh interface ip set dns " + EthName + " static " + Properties.Settings.Default.EthDnsac);
             
 
         }
@@ -211,7 +221,7 @@ namespace SetIP
         private void WIFIStatic_Click(object sender, RoutedEventArgs e)
         {
             
-            SetIP(WIFIStatic, "/c netsh interface ip set address " + WifiName + " static " + Properties.Settings.Default.WifiIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.WifiDnsac + " & netsh interface ip add dns " + WifiName + " " + Properties.Settings.Default.WifiDnsac);
+            SetIP(WIFIStatic, "/c netsh interface ip set address " + WifiName + " static " + Properties.Settings.Default.WifiIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.WifiDnsac + " & netsh interface ip set dns " + WifiName + " static " + Properties.Settings.Default.WifiDnsac);
             
         }
 
