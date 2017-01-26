@@ -202,7 +202,7 @@ namespace SetIP
         private void EthStatic_Click(object sender, RoutedEventArgs e)
         {
             
-            SetIP(EthStatic, "/c netsh interface ip set address " + EthName + " static " + Properties.Settings.Default.EthIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.EthDnsac + " & netsh interface ip set dns " + EthName + " static " + Properties.Settings.Default.EthDnsac);
+            SetIP(EthStatic, "/c netsh interface ip set address \"" + EthName + "\" static " + Properties.Settings.Default.EthIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.EthDnsac + " & netsh interface ip set dns \"" + EthName + "\" static " + Properties.Settings.Default.EthDnsac);
             
 
         }
@@ -211,7 +211,7 @@ namespace SetIP
         private void EthDHCP_Click(object sender, RoutedEventArgs e)
         {
 
-            SetIP( EthDHCP, "/c netsh interface ip set address " + EthName + " dhcp & netsh interface ip set dns " + EthName + " dhcp");
+            SetIP( EthDHCP, "/c netsh interface ip set address \"" + EthName + "\" dhcp & netsh interface ip set dns \"" + EthName + "\" dhcp");
             
 
         }
@@ -221,13 +221,13 @@ namespace SetIP
         private void WIFIStatic_Click(object sender, RoutedEventArgs e)
         {
             
-            SetIP(WIFIStatic, "/c netsh interface ip set address " + WifiName + " static " + Properties.Settings.Default.WifiIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.WifiDnsac + " & netsh interface ip set dns " + WifiName + " static " + Properties.Settings.Default.WifiDnsac);
+            SetIP(WIFIStatic, "/c netsh interface ip set address \"" + WifiName + "\" static " + Properties.Settings.Default.WifiIPac + " " + Properties.Settings.Default.Subnet + " " + Properties.Settings.Default.WifiDnsac + " & netsh interface ip set dns \"" + WifiName + "\" static " + Properties.Settings.Default.WifiDnsac);
             
         }
 
         private void WIFIDhcp_Click(object sender, RoutedEventArgs e)
         {
-            SetIP(WIFIDhcp, "/c netsh interface ip set address " + WifiName + " dhcp & netsh interface ip set dns " + WifiName + " dhcp");
+            SetIP(WIFIDhcp, "/c netsh interface ip set address \"" + WifiName + "\" dhcp & netsh interface ip set dns \"" + WifiName + "\" dhcp");
 
         }
     }
