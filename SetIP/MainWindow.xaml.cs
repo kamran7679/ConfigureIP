@@ -139,11 +139,12 @@ namespace SetIP
                 if (ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
                 {
 
-                  
-
                     foreach (IPAddress dnsAdress in ni.GetIPProperties().DnsAddresses)
                     {
-                        dns = dnsAdress.ToString();
+                        if (dnsAdress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                        {
+                            dns = dnsAdress.ToString();
+                        }
                     }
 
 
@@ -175,12 +176,13 @@ namespace SetIP
                 if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
                 {
 
-
                     foreach (IPAddress dnsAdress in ni.GetIPProperties().DnsAddresses)
                     {
-                        dns = dnsAdress.ToString();
+                        if (dnsAdress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                        {
+                            dns = dnsAdress.ToString();
+                        }
                     }
-
 
 
                     foreach (UnicastIPAddressInformation ips in ni.GetIPProperties().UnicastAddresses)
