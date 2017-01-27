@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Windows.Threading;
 
 namespace SetIP
 {
@@ -32,53 +33,80 @@ namespace SetIP
                 this.Loaded += new RoutedEventHandler(Window_Loaded);   //To show window in lower right corner
 
 
-                EthernetInf(out EthIP, out EthDns, out EthName);
-                WifiInf(out WifiIP, out WifiDns, out WifiName);
+                InitializeButtons();
+
+                DispatcherTimer timer = new DispatcherTimer();   // Timer to update button colors every 10 sec
+                timer.Interval = TimeSpan.FromSeconds(10);
+                timer.Tick += timer_Tick;
+                timer.Start();
 
 
-                if (EthIP == "" && EthDns == "")
-                {
-                    return;
-
-                }
-
-                else if (EthIP == Properties.Settings.Default.EthIPac)  
-                {
-                    EthStatic.Background = Brushes.Cyan;
-
-                }
-                             
-             
-                else
-                {
-                    EthDHCP.Background = Brushes.Cyan;
-
-                }
-                //................................
-
-                if (WifiIP == "" && WifiDns == "")
-                {
-                    return;
-
-                }
-
-                else if (WifiIP == Properties.Settings.Default.WifiIPac)  
-                {
-                    WIFIStatic.Background = Brushes.Cyan;
-
-                }
-                else
-                {
-                    WIFIDhcp.Background = Brushes.Cyan;
-
-                }
-
+               
 
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
 
         }
+
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            InitializeButtons();
+        }
+
+        void InitializeButtons()
+        {
+            EthernetInf(out EthIP, out EthDns, out EthName);
+            WifiInf(out WifiIP, out WifiDns, out WifiName);
+
+
+
+            EthStatic.ClearValue(Button.BackgroundProperty);
+            EthDHCP.ClearValue(Button.BackgroundProperty);
+
+            WIFIStatic.ClearValue(Button.BackgroundProperty);
+            WIFIDhcp.ClearValue(Button.BackgroundProperty);
+
+
+            if (EthIP == "" && EthDns == "")
+            {
+                return;
+
+            }
+
+            else if (EthIP == Properties.Settings.Default.EthIPac)
+            {
+                EthStatic.Background = Brushes.Cyan;
+
+            }
+
+
+            else
+            {
+                EthDHCP.Background = Brushes.Cyan;
+
+            }
+            //................................
+
+            if (WifiIP == "" && WifiDns == "")
+            {
+                return;
+
+            }
+
+            else if (WifiIP == Properties.Settings.Default.WifiIPac)
+            {
+                WIFIStatic.Background = Brushes.Cyan;
+
+            }
+            else
+            {
+                WIFIDhcp.Background = Brushes.Cyan;
+
+            }
+        }
+
 
 
 
