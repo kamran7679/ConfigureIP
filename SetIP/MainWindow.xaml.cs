@@ -36,9 +36,13 @@ namespace SetIP
                 WifiInf(out WifiIP, out WifiDns, out WifiName);
 
 
-                                
+                if (EthIP == "" && EthDns == "")
+                {
+                    return;
 
-                if (EthIP == Properties.Settings.Default.EthIPac)  
+                }
+
+                else if (EthIP == Properties.Settings.Default.EthIPac)  
                 {
                     EthStatic.Background = Brushes.Cyan;
 
@@ -52,7 +56,13 @@ namespace SetIP
                 }
                 //................................
 
-                if (WifiIP == Properties.Settings.Default.WifiIPac)  
+                if (WifiIP == "" && WifiDns == "")
+                {
+                    return;
+
+                }
+
+                else if (WifiIP == Properties.Settings.Default.WifiIPac)  
                 {
                     WIFIStatic.Background = Brushes.Cyan;
 
