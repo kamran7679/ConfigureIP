@@ -174,7 +174,7 @@ namespace SetIP
             nic = "";
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
-                if (ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                if (ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet && !ni.Description.StartsWith("TAP"))
                 {
 
                     foreach (IPAddress dnsAdress in ni.GetIPProperties().DnsAddresses)
