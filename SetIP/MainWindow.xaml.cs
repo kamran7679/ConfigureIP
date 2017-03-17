@@ -172,9 +172,10 @@ namespace SetIP
             ip = "";
             dns = "";
             nic = "";
+            string[] NwDesc = { "TAP", "VMware", "Windows", "Virtual" };  // Adapter types (Description) to be ommited
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
-                if (ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet && !ni.Description.StartsWith("TAP"))
+                if (ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet && !NwDesc.Any(ni.Description.Contains))  // check for adapter type and its description
                 {
 
                     foreach (IPAddress dnsAdress in ni.GetIPProperties().DnsAddresses)
