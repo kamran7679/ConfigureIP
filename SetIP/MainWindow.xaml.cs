@@ -169,7 +169,7 @@ namespace SetIP
 
         private static void EthernetInf(out string ip, out string dns, out string nic)  // To get current ethernet config
         {
-            ip =  "";
+            ip =  "" ;
             dns = "";
             nic = "";
             string[] NwDesc = { "TAP", "VMware", "Windows", "Virtual" };  // Adapter types (Description) to be ommited
