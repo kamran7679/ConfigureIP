@@ -25,7 +25,7 @@ namespace SetIP.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.192.60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.50")]
         public string EthIPac {
             get {
                 return ((string)(this["EthIPac"]));
@@ -34,7 +34,7 @@ namespace SetIP.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.192.63")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.55")]
         public string WifiIPac {
             get {
                 return ((string)(this["WifiIPac"]));
@@ -43,7 +43,7 @@ namespace SetIP.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.192.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.1")]
         public string EthDnsac {
             get {
                 return ((string)(this["EthDnsac"]));
@@ -52,7 +52,7 @@ namespace SetIP.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.192.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.1")]
         public string WifiDnsac {
             get {
                 return ((string)(this["WifiDnsac"]));
