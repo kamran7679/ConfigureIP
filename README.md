@@ -6,7 +6,7 @@ It is useful for the persons who have to change system IPs on frequent basis lik
 Any one can use this application by setting their specific IP information in App.Config.
 More buttons can be added in the interface to switch to multiple predefined configurations.
 
-The application has been written in Visual Studio 2015.
+It is a standalone application written in Visual Studio 2015. No installation needed.
 
 If you find it useful, star it.
 
