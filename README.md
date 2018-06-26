@@ -8,6 +8,8 @@ More buttons can be added in the interface to switch to multiple predefined conf
 
 It is a standalone application written in Visual Studio 2015. No installation needed.
 
+Tested on both Win10 & 7
+
 If you find it useful, star it.
 
 For any questions & querry contact me at kamran7679@gmail.com
