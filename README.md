@@ -7,8 +7,10 @@ Any one can use this application by setting their specific IP information in App
 More buttons can be added in the interface to switch to multiple predefined configurations.
 
 It is a standalone application written in Visual Studio 2015. No installation needed.
-
 Tested on both Win10 & 7
+
+Its compiled binaries can be downloaded in release section.
+App usage is demonstrated on https://youtu.be/b49vLmoOX2A
 
 If you find it useful, star it.
 
