@@ -10,6 +10,7 @@ It is a standalone application written in Visual Studio 2015. No installation ne
 Tested on both Win10 & 7
 
 Its compiled binaries can be downloaded in release section.
+
 App usage is demonstrated on https://youtu.be/b49vLmoOX2A
 
 If you find it useful, star it.
